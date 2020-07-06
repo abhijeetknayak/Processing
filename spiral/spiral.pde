@@ -13,6 +13,11 @@ void setup() {
   oscillator = new Oscillator();
 }
 
+void mouseClicked() {
+  PVector force = new PVector(random(-0.05, 0.05), random(-0.05, 0.05));
+  oscillator.applyForce(force); 
+}
+
 void draw() {
   //background(255);
   float x = r * sin(theta);

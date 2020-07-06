@@ -1,6 +1,7 @@
 class Oscillator {
   PVector angle;
   PVector velocity;
+  PVector acceleration;
   
   PVector amplitude;  
   
@@ -8,11 +9,19 @@ class Oscillator {
     angle = new PVector(0, 0);
     amplitude = new PVector(random(width / 2), random(height / 2));
     
-    velocity = new PVector(random(-0.05, 0.05), random(-0.05, 0.05));
+    velocity = new PVector(0.0, 0.0);
+    acceleration = new PVector(0.0, 0.0);
   }
   
   void update() {
+    velocity.add(acceleration);
     angle.add(velocity);    
+    
+    acceleration.mult(0);
+  }
+  
+  void applyForce(PVector force) {
+    acceleration.add(force); 
   }
   
   void display() {

@@ -10,7 +10,7 @@ void keyPressed() {
   PVector force;
   float ang_acc = 0.0;
   if (key == 'b' || key == 'B') {
-    car.friction(); 
+    //car.friction(); 
   }
   if (key == CODED) {
     if (keyCode == UP) {
